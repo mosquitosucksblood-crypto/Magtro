@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Magtro – Professional Maglev Train Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red: #D0232A;
+      --blue: #1B6BB5;
+      --dark: #1a1a1a;
+      --gray: #8a8a8a;
+      --light-gray: #b0b0b0;
+      --bg: #2e2e2e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #111;
+      border-bottom: 2px solid var(--red);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 28px;
+      text-transform: uppercase;
+      border-right: 1px solid #333;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+    }
+    nav a:first-child { border-left: 1px solid #333; }
+    nav a:hover { background: var(--red); color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Placeholder shown when image isn't added yet */
+    .hero-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a2a3a 0%, #0d1b2a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #4a6a8a;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-placeholder .icon { font-size: 3rem; }
+    .hero-placeholder p { font-size: 0.9rem; text-transform: uppercase; }
+
+    .hero-banner {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--blue);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hero-banner span.label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.25em;
+      color: #fff;
+    }
+
+    .hero-banner span.accent {
+      color: var(--red);
+      background: #fff;
+      padding: 0 8px;
+      margin-right: 8px;
+    }
+
+    /* ── BRAND SECTION ── */
+    .brand-section {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 52px 24px 40px;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .logo-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .logo-inner {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .logo-inner .mag { color: var(--blue); display: block; }
+    .logo-inner .tro { color: var(--red); display: block; }
+
+    .tagline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      color: var(--light-gray);
+      font-style: italic;
+    }
+
+    .brand-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.4em;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.3em;
+      color: var(--light-gray);
+      text-transform: uppercase;
+    }
+
+    /* ── GOALS SECTION ── */
+    .goals-section {
+      background: var(--red);
+      padding: 40px 32px 48px;
+    }
+
+    .goals-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.15em;
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      margin-bottom: 28px;
+    }
+
+    .goals-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .goals-list li {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
+      padding-left: 20px;
+      border-left: 4px solid rgba(255,255,255,0.4);
+      line-height: 1.35;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: #555;
+      text-transform: uppercase;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="magtro.html" style="color:var(--red);font-size:1rem;">⌂ Home</a>
+    <a href="goals.html">What Is Our Goals?</a>
+    <a href="about.html">Who Are We?</a>
+    <a href="best.html">How Are We The Best?</a>
+    <a href="product.html">Our Product</a>
+  </nav>
+
+  <!-- HERO: Replace hero-placeholder with an <img> tag once you have your image -->
+  <section class="hero">
+
+  <img src="hero.jpg" alt="Magtro Maglev Train" />
+
+    <div class="hero-placeholder">
+      <div class="icon">🚄</div>
+      <p>Place your hero train image here</p>
+      <p style="font-size:0.7rem; color: #3a5a7a;">See comments in HTML for instructions</p>
+    </div>
+
+    <div class="hero-banner">
+      <span class="label">The <span class="accent">Magtro</span> Series Trains</span>
+    </div>
+  </section>
+
+  <section class="brand-section">
+    <div class="logo-circle">
+   <img src="logo.png" alt="Magtro Logo" style="width:85px;height:85px;object-fit:contain;" />
+    </div>
+    <p class="tagline">"Innovation at it's finest"</p>
+    <div class="brand-name">M A G T R O</div>
+    <p class="brand-subtitle">Professional Maglev Train Company</p>
+  </section>
+
+  <section class="goals-section" id="goals">
+    <h2>Our Goals:</h2>
+    <ul class="goals-list">
+      <li>To innovate modern-day transportation,</li>
+      <li>To make maglev travel much more comfortable,</li>
+      <li>And for maglev travel to be much faster.</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 Magtro · Professional Maglev Train Company</footer>
+
+</body>
+</html>
