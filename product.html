@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Magtro – Our Product</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --red: #D0232A; --blue: #1B6BB5; --bg: #2e2e2e; --light-gray: #b0b0b0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: #fff; font-family: 'Barlow', sans-serif; }
+    nav { display: flex; justify-content: center; background: #111; border-bottom: 2px solid var(--red); position: sticky; top: 0; z-index: 100; }
+    nav a { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.12em; color: #fff; text-decoration: none; padding: 16px 28px; text-transform: uppercase; border-right: 1px solid #333; transition: background 0.2s; text-align: center; }
+    nav a:first-child { border-left: 1px solid #333; }
+    nav a:hover, nav a.active { background: var(--red); }
+    .page-header { background: var(--blue); padding: 52px 32px 40px; }
+    .page-header h1 { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 0.2em; text-decoration: underline; text-underline-offset: 6px; }
+    .content { padding: 48px 32px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+    .product-img { width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); display: block; }
+    .caption { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.15em; color: #666; text-transform: uppercase; }
+    footer { background: #111; text-align: center; padding: 20px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; color: #555; text-transform: uppercase; border-top: 1px solid #333; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="magtro.html" style="color:var(--red);font-size:1rem;">⌂ Home</a>
+    <a href="goals.html">What Is Our Goals?</a>
+    <a href="about.html">Who Are We?</a>
+    <a href="best.html">How Are We The Best?</a>
+    <a href="product.html" class="active">Our Product</a>
+  </nav>
+  <div class="page-header">
+    <h1>Our Product:</h1>
+  </div>
+  <section class="content">
+    <img src="hero.jpg" alt="Magtro Series Train" class="product-img" />
+    <p class="caption">The Magtro Series — Professional Maglev Train</p>
+  </section>
+  <footer>© 2026 Magtro · Professional Maglev Train Company</footer>
+</body>
+</html>
